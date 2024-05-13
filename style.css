@@ -1,0 +1,33 @@
+.kratkas{
+    background-color: gray;
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    display: inline-block;
+}
+.kratkab{
+    background-color: black;
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    display: inline-block;
+}
+.kratkar{
+    background-color: red;
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    display: inline-block;
+}
+.ramek{
+    width: 1240px;
+    height: 1210px;
+}
+#guziczek{
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    right: 40%;
+    top: 10px;
+    font-size: 32px ;
+}

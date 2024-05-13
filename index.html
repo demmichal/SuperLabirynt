@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="global.js"></script>
+    <script>
+        document.addEventListener("contextmenu", function(event){
+            event.preventDefault()
+        }) 
+        let ajdi = []
+        let ramek = document.createElement("div")
+        ramek.className = "ramek"
+        for(let i = 0; i < 20; i++){
+            for(let j = 0; j < 20; j++){
+                let pole = document.createElement("div")
+                pole.className = "kratkas"
+                pole.id = i + " " + j
+                pole.onclick = function(){
+                    if(pole.className == "kratkas"){
+                    pole.className = "kratkab"
+                    ajdi = pole.id.split(" ")
+                    kordy[ajdi[0]][ajdi[1]] = 1
+                    console.log(kordy)
+                    }else if(pole.className == "kratkab"){
+                    pole.className = "kratkas"
+                    ajdi = pole.id.split(" ")
+                    kordy[ajdi[0]][ajdi[1]] = 0
+                    }
+                    
+                }
+                pole.oncontextmenu = function(){
+                    if(pole.className == "kratkab"){
+                        pole.className = "kratkar"
+                        ajdi = pole.id.split(" ")
+                        kordy[ajdi[0]][ajdi[1]] = 2
+                        console.log(kordy)
+                    }else if(pole.className == "kratkar"){
+                    pole.className = "kratkab"
+                    ajdi = pole.id.split(" ")
+                    kordy[ajdi[0]][ajdi[1]] = 1
+                    }
+                    }
+                ramek.appendChild(pole)
+            }
+        }
+        let guzik = document.createElement("a")
+        guzik.id = "guziczek"
+        guzik.href = "index2.html"
+        guzik.innerHTML = "Generuj"
+        guzik.onclick = function(){
+            console.log(kordy)
+            // Store the array in localStorage
+            localStorage.setItem('dataArray', JSON.stringify(kordy));
+            // Redirect to the receiver HTML file
+            window.location.href = 'index2.html';
+        }
+        document.body.appendChild(guzik)
+        document.body.appendChild(ramek)
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#minigra{
+    height: 1000px;
+    width: 1000px;
+    background-color: grey;
+    left: 30%;
+    top: 15%;
+    position: absolute;
+    display: none;
+}
+#myCanvas{
+    height: 1000px;
+    width: 1000px;
+    background-color: grey;
+    left: 30%;
+    top: 15%;
+    position: absolute;
+    display: none;
+}
+#czasodiv{
+    right: 0%;
+    font-size: 170px;
+    position: absolute;
+    color: white;
+}
+#punktodiv{
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    color: white;
+    font-size: 170px;
+}
